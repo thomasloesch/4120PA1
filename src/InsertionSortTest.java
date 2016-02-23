@@ -8,9 +8,14 @@ public class InsertionSortTest {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = retriveValues(args[0]);
+		
 		insertionSort(numArray);
 		
-		Iterator<Integer> iterator = numArray.iterator();
+		displayValues(numArray);
+	}
+
+	public static void displayValues(ArrayList<Integer> A) {
+		Iterator<Integer> iterator = A.iterator();
 		
 		int i = 0;
 		while (iterator.hasNext()) {
