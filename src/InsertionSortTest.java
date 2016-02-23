@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class InsertionSortTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> numArray = retriveValues(args[0]);
+		insertionSort(numArray);
 		
 		Iterator<Integer> iterator = numArray.iterator();
 		
@@ -18,8 +18,18 @@ public class InsertionSortTest {
 		}
 	}
 	
-	public void insertionSort(ArrayList<Integer> A) {
-		
+	public static void insertionSort(ArrayList<Integer> A) {
+		int i;
+		int key;
+		for(int j = 1; j < A.size(); j++) {
+			key = A.get(j);
+			i = j - 1;
+			while(i >= 0 && A.get(i) > key) {
+				A.set(i + 1, A.get(i));
+				i = i - 1;
+			}
+			A.set(i + 1, key);
+		}
 	}
 	
 	public static ArrayList<Integer> retriveValues(String path) {
