@@ -12,7 +12,7 @@ public class MergeSortTest {
 
 	public static void mergeSort(ArrayList<Integer> A, int p, int r) {
 		if(p < r) {
-			int q = Math.floorDiv(p + r, 2);
+			int q = (int) Math.floor((p + r)/ 2);
 			mergeSort(A, p, q);
 			mergeSort(A, q + 1, r);
 			merge(A, p, q, r);
