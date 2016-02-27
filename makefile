@@ -1,7 +1,8 @@
 JCC = javac
 JFLAGS = -g
+VPATH = src
 
-default: InsertionSortTest.class MergeSortTest.class QuickSortTest.class RandQuickSortTest.class
+all: InsertionSortTest.class MergeSortTest.class QuickSortTest.class RandQuickSortTest.class
 
 InsertionSortTest.class: InsertionSortTest.java
 	$(JCC) $(JFLAGS) InsertionSortTest.java
