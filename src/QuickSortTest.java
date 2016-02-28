@@ -31,6 +31,7 @@ public class QuickSortTest {
 				i++;
 				swap(A, i, j);
 			}
+			comparisons++;
 		}
 		swap(A, i + 1, r);
 		return i + 1;
