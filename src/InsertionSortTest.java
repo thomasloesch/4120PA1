@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class InsertionSortTest {
-	public static int comparisons;
+	public static long comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = retriveValues(args[0]);
@@ -19,7 +19,7 @@ public class InsertionSortTest {
 		displayValues(numArray, comparisons, after.getTime() - before.getTime());
 	}
 
-	public static void displayValues(ArrayList<Integer> A, int c, long t) {
+	public static void displayValues(ArrayList<Integer> A, long c, long t) {
 		System.out.println(A.size() + ", " + c + ", " + t);
 	}
 	

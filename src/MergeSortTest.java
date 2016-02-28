@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class MergeSortTest {
-	public static int comparisons;
+	public static long comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);

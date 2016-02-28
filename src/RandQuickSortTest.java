@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class RandQuickSortTest {
-	public static int comparisons;
+	public static long comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
