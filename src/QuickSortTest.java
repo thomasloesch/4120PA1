@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 
-
 public class QuickSortTest {
+	public static int comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
 
+		int time = 0;
+		comparisons = 0;
 		quickSort(numArray, 0, numArray.size() - 1);
 		
-		InsertionSortTest.displayValues(numArray);
+		InsertionSortTest.displayValues(numArray, comparisons, time);
 	}
 	
 	public static void quickSort(ArrayList<Integer> A, int p, int r) {

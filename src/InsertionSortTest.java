@@ -1,26 +1,26 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Date;
 import java.util.Scanner;
 
 public class InsertionSortTest {
+	public static int comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = retriveValues(args[0]);
 		
-		insertionSort(numArray);
 		
-		displayValues(numArray);
+		comparisons = 0;
+		Date before = new Date();
+		insertionSort(numArray);
+		Date after = new Date();
+		
+		displayValues(numArray, comparisons, after.getTime() - before.getTime());
 	}
 
-	public static void displayValues(ArrayList<Integer> A) {
-		Iterator<Integer> iterator = A.iterator();
-		
-		int i = 0;
-		while (iterator.hasNext()) {
-			System.out.println(i++ + " " + iterator.next());
-		}
+	public static void displayValues(ArrayList<Integer> A, int c, long t) {
+		System.out.println(A.size() + ", " + c + ", " + t);
 	}
 	
 	public static void insertionSort(ArrayList<Integer> A) {

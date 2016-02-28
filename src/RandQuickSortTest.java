@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
 public class RandQuickSortTest {
+	public static int comparisons;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
 		
+		int time = 0;
+		comparisons = 0;
 		randQuickSort(numArray, 0, numArray.size() - 1);
 
-		InsertionSortTest.displayValues(numArray);
+		InsertionSortTest.displayValues(numArray, comparisons, time);
 	}
 
 	public static void randQuickSort(ArrayList<Integer> A, int p, int r) {
