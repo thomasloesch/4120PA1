@@ -28,6 +28,20 @@ public class RandQuickSortTest {
 		Random rand = new Random();
 		int i = rand.nextInt(r - p) + p;
 		QuickSortTest.swap(A, r, i);
-		return QuickSortTest.partition(A, p, r);
+		return partition(A, p, r);
+	}
+	
+	public static int partition(ArrayList<Integer> A, int p, int r) {
+		int x = A.get(r);
+		int i = p - 1;
+		for(int j = p; j < r; j++) {
+			if(A.get(j) <= x){
+				i++;
+				QuickSortTest.swap(A, i, j);
+			}
+			comparisons++;
+		}
+		QuickSortTest.swap(A, i + 1, r);
+		return i + 1;
 	}
 }
