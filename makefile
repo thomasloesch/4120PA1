@@ -7,22 +7,22 @@ VPATH = src:/src
 all: InsertionSortTest.class MergeSortTest.class QuickSortTest.class RandQuickSortTest.class
 
 InsertionSortTest.class: InsertionSortTest.java
-	$(JCC) $(JFLAGS) $^
+	@$(JCC) $(JFLAGS) $^
 
 MergeSortTest.class: MergeSortTest.java InsertionSortTest.java
-	$(JCC) $(JFLAGS) $^
+	@$(JCC) $(JFLAGS) $^
 
 QuickSortTest.class: QuickSortTest.java InsertionSortTest.java
-	$(JCC) $(JFLAGS) $^
+	@$(JCC) $(JFLAGS) $^
 
 RandQuickSortTest.class: RandQuickSortTest.java QuickSortTest.java InsertionSortTest.java
-	$(JCC) $(JFLAGS) $^
+	@$(JCC) $(JFLAGS) $^
 
 clean:
-	$(RM) *.class
+	@$(RM) *.class
 
 run: all
-	java InsertionSortTest data/10kRand.txt
-	java MergeSortTest data/10kRand.txt
-	java QuickSortTest data/10kRand.txt
-	java RandQuickSortTest data/10kRand.txt
+	@java InsertionSortTest data/10kRand.txt
+	@java MergeSortTest data/10kRand.txt
+	@java QuickSortTest data/10kRand.txt
+	@java RandQuickSortTest data/10kRand.txt
