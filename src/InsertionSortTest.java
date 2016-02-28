@@ -30,6 +30,7 @@ public class InsertionSortTest {
 			key = A.get(j);
 			i = j - 1;
 			while(i >= 0 && A.get(i) > key) {
+				comparisons++;
 				A.set(i + 1, A.get(i));
 				i = i - 1;
 			}
