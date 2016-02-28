@@ -1,22 +1,22 @@
 JCC = javac
-JFLAGS = -g
-VPATH = src
+JFLAGS = -g -d ./
+VPATH = src:/src
 
-srcdir = src/
+.SUFFIXES: .java .class .txt
 
 all: InsertionSortTest.class MergeSortTest.class QuickSortTest.class RandQuickSortTest.class
 
 InsertionSortTest.class: InsertionSortTest.java
-	$(JCC) $(JFLAGS) $(srcdir)InsertionSortTest.java
+	$(JCC) $(JFLAGS) $^
 
-MergeSortTest.class: MergeSortTest.java
-	$(JCC) $(JFLAGS) $(srcdir)MergeSortTest.java
+MergeSortTest.class: MergeSortTest.java InsertionSortTest.java
+	$(JCC) $(JFLAGS) $^
 
-QuickSortTest.class: QuickSortTest.java
-	$(JCC) $(JFLAGS) $(srcdir)QuickSortTest.java
+QuickSortTest.class: QuickSortTest.java InsertionSortTest.java
+	$(JCC) $(JFLAGS) $^
 
-RandQuickSortTest.class: RandQuickSortTest.java
-	$(JCC) $(JFLAGS) $(srcdir)RandQuickSortTest.java
+RandQuickSortTest.class: RandQuickSortTest.java QuickSortTest.java InsertionSortTest.java
+	$(JCC) $(JFLAGS) $^
 
 clean:
 	$(RM) *.class
