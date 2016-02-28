@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MergeSortTest {
 	public static int comparisons;
@@ -6,11 +7,12 @@ public class MergeSortTest {
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
 		
-		int time = 0;
 		comparisons = 0;
+		Date before = new Date();
 		mergeSort(numArray, 0, numArray.size() - 1);
+		Date after = new Date();
 		
-		InsertionSortTest.displayValues(numArray, comparisons, time);
+		InsertionSortTest.displayValues(numArray, comparisons, after.getTime() - before.getTime());
 	}
 
 	public static void mergeSort(ArrayList<Integer> A, int p, int r) {
