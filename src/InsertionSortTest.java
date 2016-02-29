@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class InsertionSortTest {
@@ -21,6 +22,15 @@ public class InsertionSortTest {
 
 	public static void displayValues(ArrayList<Integer> A, long c, long t) {
 		System.out.println(A.size() + ", " + c + ", " + t);
+	}
+	
+	public static void displayValues(ArrayList<Integer> A) {
+		Iterator<Integer> iterator = A.iterator();
+		
+		int i = 0;
+		while (iterator.hasNext()) {
+			System.out.println(i++ + " " + iterator.next());
+		}
 	}
 	
 	public static void insertionSort(ArrayList<Integer> A) {

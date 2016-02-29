@@ -13,6 +13,7 @@ public class QuickSortTest {
 		Date after = new Date();
 		
 		InsertionSortTest.displayValues(numArray, comparisons, after.getTime() - before.getTime());
+		//InsertionSortTest.displayValues(numArray);
 	}
 	
 	public static void quickSort(ArrayList<Integer> A, int p, int r) {

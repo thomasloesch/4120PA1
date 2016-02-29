@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class RandQuickSortTest {
 	public static long comparisons;
+	public static Random rand;
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
 		
 		comparisons = 0;
+		rand = new Random();
 		Date before = new Date();
 		randQuickSort(numArray, 0, numArray.size() - 1);
 		Date after = new Date();
@@ -25,7 +27,6 @@ public class RandQuickSortTest {
 	}
 	
 	public static int randPartition(ArrayList<Integer> A, int p, int r) {
-		Random rand = new Random();
 		int i = rand.nextInt(r - p) + p;
 		QuickSortTest.swap(A, r, i);
 		return partition(A, p, r);
