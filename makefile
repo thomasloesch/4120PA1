@@ -1,5 +1,6 @@
 JCC = javac
 JFLAGS = -g -d ./
+RUNFLAGS = -Xss6m
 VPATH = src:/src
 
 .SUFFIXES: .java .class .txt
@@ -58,40 +59,40 @@ MergeSortTest: MergeSortTest.class
 	@java MergeSortTest data/80kSame.txt
 	
 QuickSortTest: QuickSortTest.class
-	@java QuickSortTest data/10kRand.txt
-	@java QuickSortTest data/20kRand.txt
-	@java QuickSortTest data/40kRand.txt
-	@java QuickSortTest data/80kRand.txt
-	@java QuickSortTest data/10kSorted.txt
-	@java QuickSortTest data/20kSorted.txt
-	@java QuickSortTest data/40kSorted.txt
-	@java QuickSortTest data/80kSorted.txt
-	@java QuickSortTest data/10kReversed.txt
-	@java QuickSortTest data/20kReversed.txt
-	@java QuickSortTest data/40kReversed.txt
-	@java QuickSortTest data/80kReversed.txt
-	@java QuickSortTest data/10kSame.txt
-	@java QuickSortTest data/20kSame.txt
-	@java QuickSortTest data/40kSame.txt
-	@java QuickSortTest data/80kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kSame.txt
 	
 RandQuickSortTest: RandQuickSortTest.class
-	@java RandQuickSortTest data/10kRand.txt
-	@java RandQuickSortTest data/20kRand.txt
-	@java RandQuickSortTest data/40kRand.txt
-	@java RandQuickSortTest data/80kRand.txt
-	@java RandQuickSortTest data/10kSorted.txt
-	@java RandQuickSortTest data/20kSorted.txt
-	@java RandQuickSortTest data/40kSorted.txt
-	@java RandQuickSortTest data/80kSorted.txt
-	@java RandQuickSortTest data/10kReversed.txt
-	@java RandQuickSortTest data/20kReversed.txt
-	@java RandQuickSortTest data/40kReversed.txt
-	@java RandQuickSortTest data/80kReversed.txt
-	@java RandQuickSortTest data/10kSame.txt
-	@java RandQuickSortTest data/20kSame.txt
-	@java RandQuickSortTest data/40kSame.txt
-	@java RandQuickSortTest data/80kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kSame.txt
 
 run: all
 	@java InsertionSortTest data/10kRand.txt
@@ -102,14 +103,14 @@ run: all
 	@java MergeSortTest data/20kRand.txt
 	@java MergeSortTest data/40kRand.txt
 	@java MergeSortTest data/80kRand.txt
-	@java QuickSortTest data/10kRand.txt
-	@java QuickSortTest data/20kRand.txt
-	@java QuickSortTest data/40kRand.txt
-	@java QuickSortTest data/80kRand.txt
-	@java RandQuickSortTest data/10kRand.txt
-	@java RandQuickSortTest data/20kRand.txt
-	@java RandQuickSortTest data/40kRand.txt
-	@java RandQuickSortTest data/80kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kRand.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kRand.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kRand.txt
 	@java InsertionSortTest data/10kSorted.txt
 	@java InsertionSortTest data/20kSorted.txt
 	@java InsertionSortTest data/40kSorted.txt
@@ -118,14 +119,14 @@ run: all
 	@java MergeSortTest data/20kSorted.txt
 	@java MergeSortTest data/40kSorted.txt
 	@java MergeSortTest data/80kSorted.txt
-	@java QuickSortTest data/10kSorted.txt
-	@java QuickSortTest data/20kSorted.txt
-	@java QuickSortTest data/40kSorted.txt
-	@java QuickSortTest data/80kSorted.txt
-	@java RandQuickSortTest data/10kSorted.txt
-	@java RandQuickSortTest data/20kSorted.txt
-	@java RandQuickSortTest data/40kSorted.txt
-	@java RandQuickSortTest data/80kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kSorted.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kSorted.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kSorted.txt
 	@java InsertionSortTest data/10kReversed.txt
 	@java InsertionSortTest data/20kReversed.txt
 	@java InsertionSortTest data/40kReversed.txt
@@ -134,14 +135,14 @@ run: all
 	@java MergeSortTest data/20kReversed.txt
 	@java MergeSortTest data/40kReversed.txt
 	@java MergeSortTest data/80kReversed.txt
-	@java QuickSortTest data/10kReversed.txt
-	@java QuickSortTest data/20kReversed.txt
-	@java QuickSortTest data/40kReversed.txt
-	@java QuickSortTest data/80kReversed.txt
-	@java RandQuickSortTest data/10kReversed.txt
-	@java RandQuickSortTest data/20kReversed.txt
-	@java RandQuickSortTest data/40kReversed.txt
-	@java RandQuickSortTest data/80kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kReversed.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kReversed.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kReversed.txt
 	@java InsertionSortTest data/10kSame.txt
 	@java InsertionSortTest data/20kSame.txt
 	@java InsertionSortTest data/40kSame.txt
@@ -150,11 +151,11 @@ run: all
 	@java MergeSortTest data/20kSame.txt
 	@java MergeSortTest data/40kSame.txt
 	@java MergeSortTest data/80kSame.txt
-	@java QuickSortTest data/10kSame.txt
-	@java QuickSortTest data/20kSame.txt
-	@java QuickSortTest data/40kSame.txt
-	@java QuickSortTest data/80kSame.txt
-	@java RandQuickSortTest data/10kSame.txt
-	@java RandQuickSortTest data/20kSame.txt
-	@java RandQuickSortTest data/40kSame.txt
-	@java RandQuickSortTest data/80kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/10kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/20kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/40kSame.txt
+	@java $(RUNFLAGS) QuickSortTest data/80kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/10kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/20kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/40kSame.txt
+	@java $(RUNFLAGS) RandQuickSortTest data/80kSame.txt
