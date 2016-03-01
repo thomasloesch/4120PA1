@@ -13,6 +13,7 @@ public class InsertionSortTest {
 		
 		
 		comparisons = 0;
+		insertionSortComparisons(numArray);
 		Date before = new Date();
 		insertionSort(numArray);
 		Date after = new Date();
@@ -40,9 +41,25 @@ public class InsertionSortTest {
 			key = A.get(j);
 			i = j - 1;
 			while(i >= 0 && A.get(i) > key) {
-				comparisons++;
 				A.set(i + 1, A.get(i));
 				i = i - 1;
+			}
+			A.set(i + 1, key);
+		}
+	}
+	
+	public static void insertionSortComparisons(ArrayList<Integer> A) {
+		int i;
+		int key;
+		for(int j = 1; j < A.size(); j++) {
+			key = A.get(j);
+			i = j - 1;
+			while(i >= 0 && A.get(i) > key) {
+				if(A.get(i) > key) {
+					A.set(i + 1, A.get(i));
+					i = i - 1;
+				}
+				comparisons++;
 			}
 			A.set(i + 1, key);
 		}
