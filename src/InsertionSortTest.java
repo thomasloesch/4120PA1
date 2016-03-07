@@ -13,21 +13,21 @@ public class InsertionSortTest {
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray;
 		try{
-			FileWriter writer = new FileWriter("output.csv");
+			FileWriter writer = new FileWriter("output.csv", true);
 			
 			numArray = retriveValues(args[0]);
+			
+			ArrayList<Integer> testArray = new ArrayList<Integer>(numArray);
 			comparisons = 0;
-			insertionSortComparisons(numArray);
-		
-			final int NUM_LOOPS = 100;
-			for(int i = 0; i < NUM_LOOPS; i++) {
-				numArray = retriveValues(args[0]);
-				Date before = new Date();
-				insertionSort(numArray);
-				Date after = new Date();
+			insertionSortComparisons(testArray);
+			
+			testArray = new ArrayList<Integer>(numArray);
+			Date before = new Date();
+			insertionSort(testArray);
+			Date after = new Date();
 				
-				displayValuesFile(numArray, comparisons, after.getTime() - before.getTime(), writer);
-			}
+			writer.append("Insertion Sort,");
+			displayValuesFile(testArray, comparisons, after.getTime() - before.getTime(), writer);
 			
 			writer.flush();
 			writer.close();
