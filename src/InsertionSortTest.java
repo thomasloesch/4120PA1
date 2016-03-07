@@ -27,7 +27,7 @@ public class InsertionSortTest {
 			Date after = new Date();
 				
 			writer.append("Insertion Sort,");
-			displayValuesFile(testArray, comparisons, after.getTime() - before.getTime(), writer);
+			displayValues(testArray, comparisons, after.getTime() - before.getTime(), writer);
 			
 			writer.flush();
 			writer.close();
@@ -37,7 +37,7 @@ public class InsertionSortTest {
 		}
 	}
 
-	private static void displayValuesFile(ArrayList<Integer> A, long c, long t, FileWriter writer) {
+	public static void displayValues(ArrayList<Integer> A, long c, long t, FileWriter writer) {
 		try{
 			writer.append(Integer.toString(A.size()));
 			writer.append(",");
