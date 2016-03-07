@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
@@ -9,13 +11,24 @@ public class RandQuickSortTest {
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
 		
-		comparisons = 0;
-		rand = new Random();
-		Date before = new Date();
-		randQuickSort(numArray, 0, numArray.size() - 1);
-		Date after = new Date();
-
-		InsertionSortTest.displayValues(numArray, comparisons, after.getTime() - before.getTime());
+		try {
+			FileWriter writer = new FileWriter("output.csv", true);
+			
+			comparisons = 0;
+			rand = new Random();
+			Date before = new Date();
+			randQuickSort(numArray, 0, numArray.size() - 1);
+			Date after = new Date();
+	
+			writer.append("Rand Quick Sort,");
+			InsertionSortTest.displayValues(numArray, comparisons, after.getTime() - before.getTime(), writer);
+			
+			writer.flush();
+			writer.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void randQuickSort(ArrayList<Integer> A, int p, int r) {
