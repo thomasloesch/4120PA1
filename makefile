@@ -2,7 +2,7 @@ JCC = javac
 JFLAGS = -g -d ./
 RUNFLAGS = -Xss6m
 VPATH = src:/src
-OUTFILE = output.scv
+OUTFILE = output.csv
 
 .SUFFIXES: .java .class .txt .csv
 
