@@ -7,10 +7,13 @@ $make all
 To run use:
 $java InsertionSortTest "filename"
 $java MergeSortTest "filename"
-$java -Xss6m QuickSortTest "filename"
-$java -Xss6m RandQuickSortTest "filename"
+$java -Xss8m QuickSortTest "filename"
+$java -Xss8m RandQuickSortTest "filename"
 
-Be sure to add the "-Xss6m" to both quicksorts to avoid a stack overflow.
+Where "filename" is the input file.
+Results will be output to "output.csv".
+
+Be sure to add the "-Xss8m" to both quicksorts to avoid a stack overflow.
 
 To clean up use:
 $make clean
