@@ -8,12 +8,12 @@ public class QuickSortTest {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numArray = InsertionSortTest.retriveValues(args[0]);
+		ArrayList<Integer> testArray = new ArrayList<Integer>(numArray);
 
 		try{
 			FileWriter writer = new FileWriter("output.csv", true);
 			
 			comparisons = 0;
-			ArrayList<Integer> testArray = new ArrayList<Integer>(numArray);
 			quickSortComparison(testArray, 0, testArray.size() - 1);
 			
 			testArray = new ArrayList<Integer>(numArray);
@@ -50,6 +50,7 @@ public class QuickSortTest {
 	}
 	
 	public static int partition(ArrayList<Integer> A, int p, int r) {
+		swap(A, p + ((r - p) / 2), r); // swap the middle value to the end
 		int x = A.get(r);
 		int i = p - 1;
 		for(int j = p; j < r; j++) {
@@ -63,6 +64,7 @@ public class QuickSortTest {
 	}
 	
 	public static int partitionComparison(ArrayList<Integer> A, int p, int r) {
+		swap(A, p + ((r - p) / 2), r); // swap the middle value to the end
 		int x = A.get(r);
 		int i = p - 1;
 		for(int j = p; j < r; j++) {
